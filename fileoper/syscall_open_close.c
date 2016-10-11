@@ -103,6 +103,7 @@ int my_copy(const char * from,const char * to)
 	if(-1 == fd2)
 	{
 		printf("open file : %s fail\n,errno:%d,errmsg:%s\n",to,errno,strerror(errno));
+		close(fd1);
 		return -1;
 	}
 	char buf[256];
